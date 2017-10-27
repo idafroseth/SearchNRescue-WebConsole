@@ -1,0 +1,165 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.4007053,
+                    60.0830601,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Strømsvåg",
+                "styleUrl": "#icon-1899-0288D1-nodesc",
+                "styleHash": "-2c8c0a8c",
+                "styleMapHash": {
+                    "normal": "#icon-1899-0288D1-nodesc-normal",
+                    "highlight": "#icon-1899-0288D1-nodesc-highlight"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.4026365,
+                    60.083852,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Sæther",
+                "styleUrl": "#icon-1899-0288D1-nodesc",
+                "styleHash": "-2c8c0a8c",
+                "styleMapHash": {
+                    "normal": "#icon-1899-0288D1-nodesc-normal",
+                    "highlight": "#icon-1899-0288D1-nodesc-highlight"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.4041815,
+                    60.083424,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Mikalsen",
+                "styleUrl": "#icon-1899-0288D1-nodesc",
+                "styleHash": "-2c8c0a8c",
+                "styleMapHash": {
+                    "normal": "#icon-1899-0288D1-nodesc-normal",
+                    "highlight": "#icon-1899-0288D1-nodesc-highlight"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.4017782,
+                    60.0837664,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Frøseth",
+                "styleUrl": "#icon-1899-0288D1-nodesc",
+                "styleHash": "-2c8c0a8c",
+                "styleMapHash": {
+                    "normal": "#icon-1899-0288D1-nodesc-normal",
+                    "highlight": "#icon-1899-0288D1-nodesc-highlight"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.4035378,
+                    60.0841731,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Dahl",
+                "styleUrl": "#icon-1899-0288D1-nodesc",
+                "styleHash": "-2c8c0a8c",
+                "styleMapHash": {
+                    "normal": "#icon-1899-0288D1-nodesc-normal",
+                    "highlight": "#icon-1899-0288D1-nodesc-highlight"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.4010487,
+                    60.0837664,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Dahlen",
+                "styleUrl": "#icon-1899-0288D1-nodesc",
+                "styleHash": "-2c8c0a8c",
+                "styleMapHash": {
+                    "normal": "#icon-1899-0288D1-nodesc-normal",
+                    "highlight": "#icon-1899-0288D1-nodesc-highlight"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.3997612,
+                    60.0832313,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Rolund",
+                "styleUrl": "#icon-1899-0288D1-nodesc",
+                "styleHash": "-2c8c0a8c",
+                "styleMapHash": {
+                    "normal": "#icon-1899-0288D1-nodesc-normal",
+                    "highlight": "#icon-1899-0288D1-nodesc-highlight"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.404954,
+                    60.0837664,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Stenbråten",
+                "styleUrl": "#icon-1899-0288D1-nodesc",
+                "styleHash": "-2c8c0a8c",
+                "styleMapHash": {
+                    "normal": "#icon-1899-0288D1-nodesc-normal",
+                    "highlight": "#icon-1899-0288D1-nodesc-highlight"
+                }
+            }
+        }
+    ]
+}
