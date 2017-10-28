@@ -5,7 +5,7 @@
 		 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="crossorigin=""/>
 		 <link rel="stylesheet" href="Assets/css/leaflet-sidebar.css"/>
 		 <link rel="stylesheet" href="Assets/css/style.css"/>
-		<title>Letaksjon</title>
+		<title>Leteaksjon</title>
 	</head>
 	<body>
 	
@@ -75,30 +75,93 @@
             		return div;
             	}
 
+
             	spin.addTo(map);
 
             }
             function onMapClick(e){
-            	
             	var marker = L.marker(e.latlng).addTo(map);
             	if(!done){
-
             		showSpinner();
             		setTimeout(function(){
 		            	fetchGeoJsonLayer("plan.json",white);
 		            	fetchGeoJsonLayer("Elv.geojson",water);
 		            	fetchGeoJsonLayer("Hoyde.geojson",danger);
 		            	fetchGeoJsonLayer("Vann.geojson",water);
-		            	fetchGeoJsonLayer("Personer.geojson",water);
 		            	map.setZoom(13);
 		            	done = true;
 		            	$('.loader').hide();
-		            	$('.pnl').effect('slide', { direction: 'right', mode: 'show' }, 500);
+		            	addPersonTrack();
 					}, 2000);
-            	}
-
-
+				}
             }
+
+            var personArrayLines = [];
+
+            function addPersonTrack(){
+            	var url = "Personer.geojson";
+            	$.getJSON(url, function(data){
+            		
+            		$.each(data.features, function( index, feature ){
+            			if(feature.geometry != null){
+	            			var latLng = feature.geometry.coordinates;
+	            			var polyline =  L.polyline([[latLng[1],latLng[0]]], {
+							    color: 'green',
+							    weight: 50,
+							    opacity: 0.5,
+							    smoothFactor: 1
+							});
+
+	            			polyline.addTo(map);
+	            			personArrayLines.push(polyline);
+	            			
+	            			
+	            			
+	            		}
+            			
+            		}); 
+            		updateTrack();
+            	});
+
+            	
+				// zoom the map to the polyline
+				
+            }
+            function updateTrack(){
+            	$.each(personArrayLines, function( index, polyline){
+            		if(getPosNeg() >0){
+	            		var arrayOfPoints = polyline.getLatLngs();
+	            		
+	            		
+						 var lat = arrayOfPoints[arrayOfPoints.length-1].lat -getRandom(9500);
+						 var lng = arrayOfPoints[arrayOfPoints.length-1].lng + (getRandom(20000)*getPosNeg());
+			
+
+	            		var newLatLng = L.latLng(lat,lng);
+						
+						polyline.addLatLng(newLatLng);
+					}
+            		
+            	});
+            	setTimeout(function(){
+            		updateTrack();
+            	},600);
+            }
+
+            function getRandom(scale){
+            	var rnd = Math.random()/scale;
+            	return rnd;
+            }
+
+            function getPosNeg(){
+            	var rnd = Math.random() - 0.5;
+            	if(rnd > 0){
+            		return -1;
+            	}else{
+            		return 1;
+            	}
+            	
+            } 
 
             function fetchGeoJsonLayer(url, style){
             	$.getJSON(url, function(data){
@@ -112,13 +175,8 @@
             		}).addTo(map);
 			}
 
-            $(document).ready(function(){
-            	//$('.pnl').effect('slide', { direction: 'right', mode: 'hide' }, 500);
-            	map.invalidateSize();
-            	map.on('click', onMapClick);
-            	configureMap();
-            	
-            });
+     
+
             function slideSidePanelRight(){
 
             }
@@ -133,6 +191,13 @@
 	                fillOpacity: 0.3,
 	                fillColor: '#660000'
             	};
+		    }
+
+		    function track(){
+		    	return {
+		    		color: '#00FF00',
+		    		weight: 50
+		    	};
 		    }
 		
 		    function water() {
@@ -156,6 +221,14 @@
             	};
 		    }
 
+      		$(document).ready(function(){
+            	//$('.pnl').effect('slide', { direction: 'right', mode: 'hide' }, 500);
+            	map.invalidateSize();
+            	map.on('click', onMapClick);
+            	configureMap();
+            	
+            });
+            
     
 		</script>
 
